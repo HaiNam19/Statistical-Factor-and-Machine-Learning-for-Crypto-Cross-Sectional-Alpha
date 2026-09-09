@@ -106,7 +106,38 @@ Kết quả:
   - Backtest OOS 2023–2025 chỉ sử dụng equal-weight, nhất quán với quyết định từ Notebook 3.
   - Mean daily return có ý nghĩa thống kê ở 5% level theo Newey-West.
 
-    
+
+### Kết quả chính
+
+| Metric           |    Value |
+| ---------------- | -------: |
+| `n_days`         |     1096 |
+| `mean_daily_ret` | 0.001910 |
+| `total_return`   | 4.482628 |
+| `ann_return`     | 0.617407 |
+| `ann_vol`        | 0.423536 |
+| `sharpe`         | 1.457746 |
+| `sortino`        | 2.163329 |
+| `max_drawdown`   | 0.381515 |
+| `win_rate`       | 0.563869 |
+| `profit_factor`  | 1.209725 |
+| `nw_t_stat`      | 2.542229 |
+| `p_value`        | 0.011015 |
+
+Một vài nhận xét chính:
+  - Kết quả backtest trên 1.096 ngày cho thấy chiến lược có hiệu suất tương đối tốt nhưng đi kèm mức rủi ro đáng kể. Strategy đạt total return khoảng 448,3%, annualized return 61,7%, trong khi annualized volatility ở mức 42,4%. Từ đó, Sharpe ratio đạt 1,46 và Sortino ratio đạt 2,16
+  - Rủi ro lớn nhất thể hiện ở maximum drawdown 38,15%. Mặc dù annualized return đạt 61,7%, portfolio từng mất khoảng 38% từ đỉnh xuống đáy trước khi phục hồi. Sau một drawdown 38,15%, portfolio cần tăng khoảng 61,7% để quay trở lại mức vốn ban đầu. Do đó, Sharpe 1,46 không nên được xem xét độc lập với drawdown.
+
+<Figure size 640x480 with 1 Axes><img width="630" height="469" alt="image" src="https://github.com/user-attachments/assets/5366dc90-152f-4b8b-b9bf-ef72b6a436bb" />
 
 
+Nhận xét từ biểu đồ cửa số trượt Sharp 12 tháng:
 
+  - ~Oct 2023 – Oct 2024 (~12 tháng): rolling Sharpe dao động thấp, phần lớn dưới 1.0, có 2 đáy rõ rệt — một quanh giữa 2024 (~0.6) và một đáy sâu nhất toàn chuỗi vào khoảng Oct 2024 (~0.2). 
+  - ~Nov 2024 – Jan 2026 (~14 tháng): Sharpe bật tăng dứt khoát, đạt đỉnh ~2.7 quanh tháng 3/2025, sau đó dao động ổn định trong biên 1.9–2.6 cho đến hết mẫu.
+ 
+Từ đó cho ta thấy rằng đây không phải một alpha ổn định trải đều theo thời gian mà là một chiến lược có hiêu quả mạnh theo thị trường, với việc gần như toàn bộ giá trị được tạo ra trong khoảng 14 thấng cuối. Đồng thời kết quả cũng khớp và lí giải tại sao chỉ có 2 factor liên quan tới volatility sống sót sau các kiểm định thống kê.
+
+**Kết luận cuối:** khả năng rất cao chiến lược này đang hưởng lợi từ biến cố thị 
+trường cụ thể chứ không phải chiến lược bền vững lâu dài (một phần vì phần 
+kiểm định thống kê chỉ từ đầu 2020 tới cuối 2021 nên dữ liệu chưa đủ dài). 
