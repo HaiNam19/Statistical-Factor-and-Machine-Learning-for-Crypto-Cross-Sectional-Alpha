@@ -14,10 +14,10 @@ Pipeline gồm 4 notebook, thực hiện tuần tự và phụ thuộc dữ li�
 
 |  | Notebook                       | Giai đoạn             | Input                                                  | Output                                                                                           |
 | - | ------------------------------ | --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| 1 | `1_Universe_RawFactors.ipynb`  | Universe & Raw Factor | Dữ liệu thị trường gốc                                 | Universe & raw factors sạch, point-in-time, chia thành 2020–2021 (In Sample) và 2022–2025 (Out of Sample) |
-| 2 | `2_StatisticalFiltering.ipynb` | Statistical Filtering | Raw factors — **2020–2021 (IS)**                       | Các factor có bằng chứng thống kê; không sử dụng dữ liệu 2022–2025                           |
-| 3 | `3_WeightingScheme.ipynb`      | Weighting Scheme      | Các factor đã lọc + dữ liệu **2022–2025**              | Phương pháp weighting bằng walk-forward: Tối ưu trọng số trên quá khứ- áp dụng cho tương lai- dùng cửa sổ trượt về phía trước và lặp lại để kết hợp 2 factor |
-| 4 | `4_Execution_Cost.ipynb`       | Execution & Cost      | Alpha + weighting scheme + dữ liệu **2022–2025 (OOS)** | Danh mục thực thi, transaction costs, turnover và hiệu suất OOS                           |
+| 1 | `1_universe_factor_construction.ipynb`  | Universe & Raw Factor | Dữ liệu thị trường gốc                                 | Universe & raw factors sạch, point-in-time, chia thành 2020–2021 (In Sample) và 2022–2025 (Out of Sample) |
+| 2 | `2_statistical_significant_factor.ipynb` | Statistical Filtering | Raw factors — **2020–2021 (IS)**                       | Các factor có bằng chứng thống kê; không sử dụng dữ liệu 2022–2025                           |
+| 3 | `3_composite_alpha_construction.ipynb`      | Weighting Scheme      | Các factor đã lọc + dữ liệu **2022–2025**              | Phương pháp weighting bằng walk-forward: Tối ưu trọng số trên quá khứ- áp dụng cho tương lai- dùng cửa sổ trượt về phía trước và lặp lại để kết hợp 2 factor |
+| 4 | `4_backtesting.ipynb`       | Execution & Cost      | Alpha + weighting scheme + dữ liệu **2022–2025 (OOS)** | Danh mục thực thi, transaction costs, turnover và hiệu suất OOS                           |
 
 ## Mô Tả Từng Phần
 
