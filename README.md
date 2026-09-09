@@ -14,10 +14,10 @@ The pipeline consists of 4 notebooks, executed sequentially and dependent on eac
 
 |   | Notebook                       | Stage                 | Input                                               | Output                                                                                                                                               |
 | - | ------------------------------ | --------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | `1_Universe_RawFactors.ipynb`  | Universe & Raw Factor | Raw market data                                     | Clean, point-in-time universe & raw factors, split into 2020–2021 (In Sample) and 2022–2025 (Out of Sample)                                          |
-| 2 | `2_StatisticalFiltering.ipynb` | Statistical Filtering | Raw factors — **2020–2021 (IS)**                    | Factors with statistical evidence; 2022–2025 data is not used                                                                                        |
-| 3 | `3_WeightingScheme.ipynb`      | Weighting Scheme      | Selected factors + data **2022–2025**               | Walk-forward weighting method: optimize weights on the past - apply them to the future - move the window forward and repeat to combine the 2 factors |
-| 4 | `4_Execution_Cost.ipynb`       | Execution & Cost      | Alpha + weighting scheme + data **2022–2025 (OOS)** | Executable portfolio, transaction costs, turnover, and OOS performance                                                                               |
+| 1 | `1_universe_factor_construction.ipynb`  | Universe & Raw Factor | Raw market data                                     | Clean, point-in-time universe & raw factors, split into 2020–2021 (In Sample) and 2022–2025 (Out of Sample)                                          |
+| 2 | `2_statistical_significant_factor.ipynb` | Statistical Filtering | Raw factors — **2020–2021 (IS)**                    | Factors with statistical evidence; 2022–2025 data is not used                                                                                        |
+| 3 | `3_composite_alpha_construction.ipynb`      | Weighting Scheme      | Selected factors + data **2022–2025**               | Walk-forward weighting method: optimize weights on the past - apply them to the future - move the window forward and repeat to combine the 2 factors |
+| 4 | `4_backtesting.ipynb`       | Execution & Cost      | Alpha + weighting scheme + data **2022–2025 (OOS)** | Executable portfolio, transaction costs, turnover, and OOS performance                                                                               |
 
 ## Module Descriptions
 
